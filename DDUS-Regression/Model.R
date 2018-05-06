@@ -11,7 +11,7 @@ fit.svm <- train(Level~., data=dataset2, method="svmRadial", trControl=control)
 # kNN
 set.seed(7)
 fit.knn <- train(Level~., data=dataset2, method="knn", trControl=control)
-<<<<<<< HEAD
+
 # Bayesglm
 set.seed(7)
 fit.bayesglm<- train(Level~., data=dataset2, method="bayesglm", trControl=control)
@@ -28,24 +28,6 @@ fit.rpart2<- train(Level~., data=dataset2, method="rpart2", trControl=control)
 set.seed(7)
 fit.ctree<- train(Level~., data=dataset2, method="ctree", trControl=control)
 #ctree2
-=======
-
-set.seed(7)
-fit.bayesglm<- train(Level~., data=dataset2, method="bayesglm", trControl=control)
-
-set.seed(7)
-fit.glmboost<- train(Level~., data=dataset2, method="glmboost", trControl=control)
-
-set.seed(7)
-fit.rpart1SE<- train(Level~., data=dataset2, method="rpart1SE", trControl=control)
-
-set.seed(7)
-fit.rpart2<- train(Level~., data=dataset2, method="rpart2", trControl=control)
-
-set.seed(7)
-fit.ctree<- train(Level~., data=dataset2, method="ctree", trControl=control)
-
->>>>>>> 6820c8a56dcc2705828b4d59512946edaa5e5ea6
 set.seed(7)
 fit.ctree2<- train(Level~., data=dataset2, method="ctree2", trControl=control)
 
