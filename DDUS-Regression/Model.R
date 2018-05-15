@@ -82,8 +82,3 @@ fit.lmStepAIC<- train(Level~., data=dataset2, method="lmStepAIC", trControl=cont
 set.seed(7)
 fit.avNNet<- train(Level~., data=dataset2, method="avNNet", trControl=control)
 
-set.seed(7)
-fit.mlp<- train(Level~., data=dataset2, method="mlp", trControl=control)
-
-set.seed(7)
-fit.mlpweightDecay<- train(Level~., data=dataset2, method="mlpWeightDecay", trControl=control)
