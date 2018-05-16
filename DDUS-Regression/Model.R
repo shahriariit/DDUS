@@ -2,15 +2,36 @@ source('Dataset.R')
 
 source('Control.R')
 
+set.seed(7)
+fit.lm<- train(Level~., data=dataset2, method="lm", trControl=control)
+set.seed(7)
+fit.lmStepAIC<- train(Level~., data=dataset2, method="lmStepAIC", trControl=control)
+
 # CART
 set.seed(7)
 fit.cart <- train(Level~., data=dataset2, method="rpart", trControl=control)
+set.seed(7)
+fit.cart1SE<- train(Level~., data=dataset2, method="rpart1SE", trControl=control)
+set.seed(7)
+fit.cart2<- train(Level~., data=dataset2, method="rpart2", trControl=control)
+
 # SVM
 set.seed(7)
-fit.svm <- train(Level~., data=dataset2, method="svmRadial", trControl=control)
+fit.svmlinear <- train(Level~., data=dataset2, method="svmLinear", trControl=control)
+set.seed(7)
+fit.svmlinear2 <- train(Level~., data=dataset2, method="svmLinear2", trControl=control)
+set.seed(7)
+fit.svmlinear3<- train(Level~., data=dataset2, method="svmLinear3", trControl=control)
+set.seed(7)
+fit.svmRadial <- train(Level~., data=dataset2, method="svmRadial", trControl=control)
+set.seed(7)
+fit.svmRadialCost <- train(Level~., data=dataset2, method="svmRadialCost", trControl=control)
+
 # kNN
 set.seed(7)
 fit.knn <- train(Level~., data=dataset2, method="knn", trControl=control)
+set.seed(7)
+fit.kknn<- train(Level~., data=dataset2, method="kknn", trControl=control)
 
 # Bayesglm
 set.seed(7)
@@ -18,16 +39,10 @@ fit.bayesglm<- train(Level~., data=dataset2, method="bayesglm", trControl=contro
 #glmboost
 set.seed(7)
 fit.glmboost<- train(Level~., data=dataset2, method="glmboost", trControl=control)
-#rpart1SE
-set.seed(7)
-fit.rpart1SE<- train(Level~., data=dataset2, method="rpart1SE", trControl=control)
-#rpart2
-set.seed(7)
-fit.rpart2<- train(Level~., data=dataset2, method="rpart2", trControl=control)
+
 #ctree
 set.seed(7)
 fit.ctree<- train(Level~., data=dataset2, method="ctree", trControl=control)
-#ctree2
 set.seed(7)
 fit.ctree2<- train(Level~., data=dataset2, method="ctree2", trControl=control)
 
@@ -36,7 +51,6 @@ fit.enet<- train(Level~., data=dataset2, method="enet", trControl=control)
 
 set.seed(7)
 fit.gaussprLinear<- train(Level~., data=dataset2, method="gaussprLinear", trControl=control)
-
 set.seed(7)
 fit.gaussprRadial<- train(Level~., data=dataset2, method="gaussprRadial", trControl=control) 
 
@@ -45,40 +59,27 @@ fit.gam<- train(Level~., data=dataset2, method="gam", trControl=control)
 
 set.seed(7)
 fit.glm<- train(Level~., data=dataset2, method="glm", trControl=control)
-
 set.seed(7)
 fit.glmStepAIC<- train(Level~., data=dataset2, method="glmStepAIC", trControl=control) 
-
 set.seed(7)
 fit.glmnet<- train(Level~., data=dataset2, method="glmnet", trControl=control)
 
 set.seed(7)
 fit.icr<- train(Level~., data=dataset2, method="icr", trControl=control)
 
-set.seed(7)
-fit.kknn<- train(Level~., data=dataset2, method="kknn", trControl=control)
-
-set.seed(7)
-fit.svmlinear3<- train(Level~., data=dataset2, method="svmLinear3", trControl=control)
 
 set.seed(7)
 fit.lars<- train(Level~., data=dataset2, method="lars", trControl=control)
 
-set.seed(7)
-fit.lm<- train(Level~., data=dataset2, method="lm", trControl=control)
 
 set.seed(7)
 fit.leapbw<- train(Level~., data=dataset2, method="leapBackward", trControl=control)
-
 set.seed(7)
 fit.leapForward<- train(Level~., data=dataset2, method="leapForward", trControl=control)
-
 set.seed(7)
 fit.leapSeq<- train(Level~., data=dataset2, method="leapSeq", trControl=control)
 
-set.seed(7)
-fit.lmStepAIC<- train(Level~., data=dataset2, method="lmStepAIC", trControl=control)
 
-set.seed(7)
-fit.avNNet<- train(Level~., data=dataset2, method="avNNet", trControl=control)
+
+
 
