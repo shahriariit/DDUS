@@ -1,3 +1,3 @@
 # collect resamples
-results <- resamples(list(CART=fit.cart, SVM=fit.svm, KNN=fit.knn, RF=fit.rf))
+results <- resamples(list(BayesGlm=fit.bayesglm, CART=fit.cart, CART1=fit.cart1SE, CART2=fit.cart2, Ctree1=fit.ctree, Ctree2=fit.ctree2, ENET=fit.enet, FOBA=fit.foba, GAM=fit.gam, GSprLin=fit.gaussprLinear, GSprRad=fit.gaussprRadial, GLM1=fit.glm, GLM2=fit.glmboost, GLM3=fit.glmnet, GLM4=fit.glmStepAIC, ICR=fit.icr, KrnlPLS=fit.kernelpls, KNN=fit.knn, KKNN=fit.kknn, LARS=fit.lars, LEAP1=fit.leapbw, LEAP2=fit.leapForward, LEAP3=fit.leapSeq, LM1=fit.lm, LM2=fit.lmStepAIC, PCR=fit.pcr, PPR=fit.ppr, RIDGE=fit.ridge, RLM=fit.rlm, SIMPLS=fit.simpls,SUPERPC=fit.superpc, SVM=fit.svmlinear, SVM2=fit.svmlinear2, SVM3=fit.svmlinear3, SVM4=fit.svmRadial))
 summary(results)
