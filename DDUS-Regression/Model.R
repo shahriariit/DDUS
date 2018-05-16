@@ -2,6 +2,7 @@ source('Dataset.R')
 
 source('Control.R')
 
+#LM
 set.seed(7)
 fit.lm<- train(Level~., data=dataset2, method="lm", trControl=control)
 set.seed(7)
@@ -36,6 +37,7 @@ fit.kknn<- train(Level~., data=dataset2, method="kknn", trControl=control)
 # Bayesglm
 set.seed(7)
 fit.bayesglm<- train(Level~., data=dataset2, method="bayesglm", trControl=control)
+
 #glmboost
 set.seed(7)
 fit.glmboost<- train(Level~., data=dataset2, method="glmboost", trControl=control)
@@ -49,14 +51,17 @@ fit.ctree2<- train(Level~., data=dataset2, method="ctree2", trControl=control)
 set.seed(7)
 fit.enet<- train(Level~., data=dataset2, method="enet", trControl=control)
 
+#Gaussain
 set.seed(7)
 fit.gaussprLinear<- train(Level~., data=dataset2, method="gaussprLinear", trControl=control)
 set.seed(7)
 fit.gaussprRadial<- train(Level~., data=dataset2, method="gaussprRadial", trControl=control) 
 
+#GAM
 set.seed(7)
 fit.gam<- train(Level~., data=dataset2, method="gam", trControl=control) 
 
+#GLM
 set.seed(7)
 fit.glm<- train(Level~., data=dataset2, method="glm", trControl=control)
 set.seed(7)
