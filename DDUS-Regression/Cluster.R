@@ -1,6 +1,6 @@
 kmeans <- kmeans(X, 2)
-aggregate(X,by=list(fit$cluster),FUN=mean)
-mydata <- data.frame(X, fit$cluster)
+aggregate(X,by=list(kmeans$cluster),FUN=mean)
+mydata <- data.frame(X, kmeans$cluster)
 library(cluster)
 clusplot(X,
          kmeans$cluster,
