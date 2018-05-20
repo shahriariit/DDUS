@@ -86,7 +86,6 @@ set.seed(7)
 fit.leapSeq<- train(Level~., data=dataset2, method="leapSeq", trControl=control)
 
 
-
 set.seed(7)
 fit.ridge<- train(Level~., data=dataset2, method="ridge", trControl=control)
 set.seed(7)
@@ -111,9 +110,3 @@ fit.rlm<- train(Level~., data=dataset2, method="rlm", trControl=control)
 
 set.seed(7)
 fit.superpc<- train(Level~., data=dataset2, method="superpc", trControl=control)
-
-
-
-
-
-
