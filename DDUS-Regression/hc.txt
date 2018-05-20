@@ -1,0 +1,11 @@
+res.agnes <- agnes(x = X, 
+                   stand = TRUE, 
+                   metric = "euclidean", 
+                   method = "ward")
+
+res.diana <- diana(x = X, 
+                   stand = TRUE, 
+                   metric = "euclidean") 
+
+fviz_dend(res.agnes, cex = 0.6, k = 2)
+fviz_dend(res.diana, cex = 0.6, k = 2)
