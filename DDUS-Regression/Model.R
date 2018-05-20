@@ -87,5 +87,33 @@ fit.leapSeq<- train(Level~., data=dataset2, method="leapSeq", trControl=control)
 
 
 
+set.seed(7)
+fit.ridge<- train(Level~., data=dataset2, method="ridge", trControl=control)
+set.seed(7)
+fit.foba<- train(Level~., data=dataset2, method="foba", trControl=control)
+set.seed(7)
+fit.pcr<- train(Level~., data=dataset2, method="pcr", trControl=control)
+set.seed(7)
+fit.ppr<- train(Level~., data=dataset2, method="ppr", trControl=control)
+
+set.seed(7)
+fit.penalized<- train(Level~., data=dataset2, method="penalized", trControl=control)
+
+set.seed(7)
+fit.pls<- train(Level~., data=dataset2, method="pls", trControl=control)
+set.seed(7)
+fit.simpls<- train(Level~., data=dataset2, method="simpls", trControl=control)
+set.seed(7)
+fit.kernelpls<- train(Level~., data=dataset2, method="kernelpls", trControl=control)
+
+set.seed(7)
+fit.rlm<- train(Level~., data=dataset2, method="rlm", trControl=control)
+
+set.seed(7)
+fit.superpc<- train(Level~., data=dataset2, method="superpc", trControl=control)
+
+
+
+
 
 

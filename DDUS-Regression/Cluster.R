@@ -30,3 +30,15 @@ library(mclust)
 fit <- Mclust(X)
 plot(fit)
 summary(fit)
+
+
+library(dbscan)
+X_matrix <- as.matrix(X[, -26])
+kNNdistplot(X_matrix, k=4)
+abline(h=0.4, col="red")
+
+set.seed(1234)
+db = dbscan(X_matrix, 0.4, 4)
+db 
+
+hullplot(X_matrix, db$cluster)
