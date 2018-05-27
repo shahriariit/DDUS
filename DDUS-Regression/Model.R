@@ -2,111 +2,81 @@ source('Dataset.R')
 
 source('Control.R')
 
-#LM
-set.seed(7)
-fit.lm<- train(Level~., data=dataset2, method="lm", trControl=control)
-set.seed(7)
-fit.lmStepAIC<- train(Level~., data=dataset2, method="lmStepAIC", trControl=control)
+rf <- function(x){
+  set.seed(7)
+  return(train(Level~., data=dataset3, method=x, trControl=control)) 
+}
+
+#lm
+fit.lm <- rf("lm") 
+fit.lmStepAIC<- rf("lmStepAIC")
 
 # CART
-set.seed(7)
-fit.cart <- train(Level~., data=dataset2, method="rpart", trControl=control)
-set.seed(7)
-fit.cart1SE<- train(Level~., data=dataset2, method="rpart1SE", trControl=control)
-set.seed(7)
-fit.cart2<- train(Level~., data=dataset2, method="rpart2", trControl=control)
+fit.cart <- rf("rpart")
+fit.cart1SE<- rf("rpart1SE")
+fit.cart2<- rf("rpart2")
 
 # SVM
-set.seed(7)
-fit.svmlinear <- train(Level~., data=dataset2, method="svmLinear", trControl=control)
-set.seed(7)
-fit.svmlinear2 <- train(Level~., data=dataset2, method="svmLinear2", trControl=control)
-set.seed(7)
-fit.svmlinear3<- train(Level~., data=dataset2, method="svmLinear3", trControl=control)
-set.seed(7)
-fit.svmRadial <- train(Level~., data=dataset2, method="svmRadial", trControl=control)
-set.seed(7)
-fit.svmRadialCost <- train(Level~., data=dataset2, method="svmRadialCost", trControl=control)
+fit.svmlinear <- rf("svmLinear")
+fit.svmlinear2 <- rf("svmLinear2")
+fit.svmlinear3<- rf("svmLinear3")
+fit.svmRadial <- rf("svmRadial")
+fit.svmRadialCost <- rf("svmRadialCost")
 
 # kNN
-set.seed(7)
-fit.knn <- train(Level~., data=dataset2, method="knn", trControl=control)
-set.seed(7)
-fit.kknn<- train(Level~., data=dataset2, method="kknn", trControl=control)
-
-# Bayesglm
-set.seed(7)
-fit.bayesglm<- train(Level~., data=dataset2, method="bayesglm", trControl=control)
-
-#glmboost
-set.seed(7)
-fit.glmboost<- train(Level~., data=dataset2, method="glmboost", trControl=control)
+fit.knn <- rf("knn")
+fit.kknn<- rf("kknn")
 
 #ctree
-set.seed(7)
-fit.ctree<- train(Level~., data=dataset2, method="ctree", trControl=control)
-set.seed(7)
-fit.ctree2<- train(Level~., data=dataset2, method="ctree2", trControl=control)
+fit.ctree<- rf("ctree")
+fit.ctree2<- rf("ctree2")
 
-set.seed(7)
-fit.enet<- train(Level~., data=dataset2, method="enet", trControl=control)
-
-#Gaussain
-set.seed(7)
-fit.gaussprLinear<- train(Level~., data=dataset2, method="gaussprLinear", trControl=control)
-set.seed(7)
-fit.gaussprRadial<- train(Level~., data=dataset2, method="gaussprRadial", trControl=control) 
-
+#enet
+fit.enet<- rf("enet")
+ 
 #GAM
-set.seed(7)
-fit.gam<- train(Level~., data=dataset2, method="gam", trControl=control) 
+fit.gam<- rf("gam") 
 
 #GLM
-set.seed(7)
-fit.glm<- train(Level~., data=dataset2, method="glm", trControl=control)
-set.seed(7)
-fit.glmStepAIC<- train(Level~., data=dataset2, method="glmStepAIC", trControl=control) 
-set.seed(7)
-fit.glmnet<- train(Level~., data=dataset2, method="glmnet", trControl=control)
+fit.glm<- rf("glm")
+fit.glmStepAIC<- rf("glmStepAIC") 
+fit.glmnet<- rf("glmnet")
+fit.bayesglm<- rf("bayesglm")
+fit.glmboost<- rf("glmboost")
 
 #ICR
-set.seed(7)
-fit.icr<- train(Level~., data=dataset2, method="icr", trControl=control)
+fit.icr<- rf("icr")
 
 #LARS
-set.seed(7)
-fit.lars<- train(Level~., data=dataset2, method="lars", trControl=control)
+fit.lars<- rf("lars")
 
 #LEAP
-set.seed(7)
-fit.leapbw<- train(Level~., data=dataset2, method="leapBackward", trControl=control)
-set.seed(7)
-fit.leapForward<- train(Level~., data=dataset2, method="leapForward", trControl=control)
-set.seed(7)
-fit.leapSeq<- train(Level~., data=dataset2, method="leapSeq", trControl=control)
+fit.leapbw<- rf("leapBackward")
+fit.leapForward<- rf("leapForward")
+fit.leapSeq<- rf("leapSeq")
 
+#RIDGE
+fit.ridge<- rf("ridge")
 
-set.seed(7)
-fit.ridge<- train(Level~., data=dataset2, method="ridge", trControl=control)
-set.seed(7)
-fit.foba<- train(Level~., data=dataset2, method="foba", trControl=control)
-set.seed(7)
-fit.pcr<- train(Level~., data=dataset2, method="pcr", trControl=control)
-set.seed(7)
-fit.ppr<- train(Level~., data=dataset2, method="ppr", trControl=control)
+#FOBA
+fit.foba<- rf("foba")
 
-set.seed(7)
-fit.penalized<- train(Level~., data=dataset2, method="penalized", trControl=control)
+#PCR
+fit.pcr<- rf("pcr")
 
-set.seed(7)
-fit.pls<- train(Level~., data=dataset2, method="pls", trControl=control)
-set.seed(7)
-fit.simpls<- train(Level~., data=dataset2, method="simpls", trControl=control)
-set.seed(7)
-fit.kernelpls<- train(Level~., data=dataset2, method="kernelpls", trControl=control)
+#PPR
+fit.ppr<- rf("ppr")
 
-set.seed(7)
-fit.rlm<- train(Level~., data=dataset2, method="rlm", trControl=control)
+#PENALIZED
+fit.penalized<- rf("penalized")
 
-set.seed(7)
-fit.superpc<- train(Level~., data=dataset2, method="superpc", trControl=control)
+#PLS
+fit.pls<- rf("pls")
+fit.simpls<- rf("simpls")
+fit.kernelpls<- rf("kernelpls")
+
+#RLM
+fit.rlm<- rf("rlm")
+
+#SUPERPC
+fit.superpc<- rf("superpc")
