@@ -4,7 +4,7 @@ source('Control.R')
 
 rf <- function(x){
   set.seed(7)
-  return(train(Level~., data=dataset3, method=x, trControl=control)) 
+  return(train(Level~., data=dataset5, method=x, trControl=control)) 
 } 
 
 fit.lm <- rf("lm") 
