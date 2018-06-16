@@ -18,3 +18,10 @@ dataset10=read.csv('kmeans_1.csv')
 dataset11=read.csv('kmeans_2.csv')
 dataset12=read.csv('pam_1.csv')
 dataset13=read.csv('pam_2.csv')
+
+pathway="C:/Users/Shahriar/Documents/ML/DDUS/DDUS/DDUS-Regression/file/"
+
+library(rio)
+my_data <- import_list(dir(pathway, pattern = ".csv"))
+
+
