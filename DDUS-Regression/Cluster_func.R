@@ -7,6 +7,7 @@ library(caTools)
 
 # Number of Cluster Anaysis
 
+
 neclust <- function(k){
   fviz_nbclust(X, k, method = "wss") +
     geom_vline(xintercept = 4, linetype = 2)+
@@ -75,3 +76,4 @@ clust_com <- function(x,y,z){
   temp_res <- resamples(list(Cluster1=x,Cluster2=y))
   write(capture.output(summary(temp_res)),file =sprintf("%s%s",Outgoing,z) )
 } 
+

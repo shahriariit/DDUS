@@ -1,3 +1,3 @@
-Incoming ="C:/Users/Shahriar/Documents/ML/DDUS/DDUS/DDUS-Regression/Input/"
-Outgoing ="C:/Users/Shahriar/Documents/ML/DDUS/DDUS/DDUS-Regression/output/"
-plotway ="C:/Users/Shahriar/Documents/ML/DDUS/DDUS/DDUS-Regression/output/figure/"
+Incoming ="C:/Users/Wakia IT/Documents/DDUS/DDUS-Regression/Input/"
+Outgoing ="C:/Users/Wakia IT/Documents/DDUS/DDUS-Regression/output/"
+plotway ="C:/Users/Wakia IT/Documents/DDUS/DDUS-Regression/output/figure/"

@@ -1,3 +1,10 @@
+
+Call:
+summary.resamples(object = temp_reg)
+
+Models: LM, GLM, BAYESGLM, ENET, GAM, LARS, PPR, RIDGE, RLM 
+Number of resamples: 100 
+
 MAE 
                  Min.      1st Qu.       Median         Mean      3rd Qu.         Max. NA's
 LM       2.049643e-16 6.234329e-16 1.434750e-15 1.503381e-15 2.248202e-15 3.589721e-15    0
