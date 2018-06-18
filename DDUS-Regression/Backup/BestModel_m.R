@@ -4,7 +4,7 @@ source('Control.R')
 
 rf_m <- function(x){
   set.seed(7)
-  return(train(Level~., data=mixeddataset, method=x, trControl=control)) 
+  return(train(Level~., data=dataset4, method=x, trControl=control)) 
 } 
 
 #p=c("lm","glm","rlm")

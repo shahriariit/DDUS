@@ -7,11 +7,6 @@ rf_o <- function(x){
   return(train(Level~., data=orginaldataset, method=x, trControl=control)) 
 } 
 
-#p=c("lm","glm","rlm")
-
-#al=list()
-#al=lapply(p,rf)
-
 
 fit.lm_o <- rf("lm") 
 fit.lmStepAIC_o<- rf("lmStepAIC") 

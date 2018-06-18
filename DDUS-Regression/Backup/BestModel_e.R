@@ -2,15 +2,15 @@ source('Dataset.R')
 
 source('Control.R')
 
-rf_e <- function(x){
+rf <- function(x,y){
   set.seed(7)
-  return(train(Level~., data=externaldataset, method=x, trControl=control)) 
+  return(train(Level~., data=x, method=y, trControl=control)) 
 } 
 
-#p=c("lm","glm","rlm")
+#reg=c("lm","glm","bayesglm","enet","gam","lars","ridge","ppr","rlm")
 
-#al=list()
-#al=lapply(p,rf)
+#reg_lt=list()
+#reg_lt=lapply(reg,rf)
 
 
 fit.lm_e <- rf("lm") 

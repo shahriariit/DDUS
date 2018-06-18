@@ -1,6 +1,4 @@
-X=dataset2[4:28]
-
-res <- cor(X)
+res <- cor(original_data)
 round(res, 2)
 
 library(corrplot)
