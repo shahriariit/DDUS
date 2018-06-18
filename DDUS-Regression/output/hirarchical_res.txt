@@ -1,0 +1,28 @@
+
+Call:
+summary.resamples(object = temp_res)
+
+Models: Cluster1, Cluster2 
+Number of resamples: 100 
+
+MAE 
+                 Min.      1st Qu.       Median         Mean      3rd Qu.         Max.
+Cluster1 3.424756e-16 9.661763e-16 1.554595e-15 1.711437e-15 2.107892e-15 4.606485e-15
+Cluster2 3.608225e-16 8.814498e-16 1.263679e-15 1.523625e-15 2.021952e-15 5.412337e-15
+         NA's
+Cluster1    0
+Cluster2    0
+
+RMSE 
+                 Min.      1st Qu.       Median         Mean      3rd Qu.         Max.
+Cluster1 4.487689e-16 1.171078e-15 1.852000e-15 2.006419e-15 2.520909e-15 4.804777e-15
+Cluster2 4.965068e-16 1.095141e-15 1.609665e-15 1.826613e-15 2.167162e-15 6.029032e-15
+         NA's
+Cluster1    0
+Cluster2    0
+
+Rsquared 
+         Min. 1st Qu. Median Mean 3rd Qu. Max. NA's
+Cluster1    1       1      1    1       1    1    0
+Cluster2    1       1      1    1       1    1    0
+

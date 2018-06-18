@@ -1,56 +1,29 @@
-X=dataset2[4:29]
+X=original_data 
 
 #KMeans
 km <- kmeans(X, 2, nstart = 25)
-mydata <- data.frame(X, km$cluster)
-write.csv(mydata, file="kmeans_file.csv")
-library(cluster)
-clusplot(X,
-         km$cluster,
-         lines = 0,
-         shade = TRUE,
-         color = TRUE,
-         labels = 2,
-         plotchar = FALSE,
-         span = TRUE,
-         main = paste('Cluster'),
-         xlab = "X1",
-         ylab="Level")
+clsg(X,km$cluster,"kmeans")
+clp(X,km$cluster,"kmeans")
+clus_split('kmeans_file.csv',y,"kmeans")
+
 
 #PAM
-library(cluster)
-library(factoextra)
-fviz_nbclust(X, pam, method = "silhouette")+ theme_classic()
 pam.res <- pam(X, 2, metric = "euclidean", stand = FALSE)
-pam1 <- data.frame(X, pam.res$clustering)
-write.csv(pam1, file="pam_file.csv")
-print(pam.res)
-clusplot(X,
-         pam.res$clustering,
-         lines = 0,
-         shade = TRUE,
-         color = TRUE,
-         labels = 2,
-         plotchar = FALSE,
-         span = TRUE,
-         main = paste('Cluster'),
-         xlab = "X1",
-         ylab="Level")
+clsg(X,pam.res$clustering,"pam")
+clp(X,pam.res$clustering,"pam")
+clus_split('pam_file.csv',y,"pam")
 
 #CLARA
+clara.res <- clara(X, 2, metric = "euclidean", stand = FALSE)
+clsg(X,clara.res$clustering,"clara")
+clp(X,clara.res$clustering,"clara")
+clus_split('clara_file.csv',y,"clara")
 
-fviz_nbclust(X, clara, method = "silhouette")+theme_classic()
-clara.res <- clara(X, 2, metric = "euclidean", stand = FALSE, samples = 5, pamLike = FALSE)
-clara1 <- data.frame(X, clara.res$clustering)
-write.csv(clara1, file="clara_file.csv")
 
 #Hierarchical Clustering
 d <- dist(X, method = "euclidean")
 hc <- hclust(d, method="ward.D2")
 fviz_dend(hc, cex = 0.5)
-plot(hc)
 hcs <- cutree(hc, k=2)
-hcs
-hc1 <- data.frame(X, hcs)
-write.csv(hc1, file="hc_file.csv")
-rect.hclust(hc, k=2, border="red")
+clsg(X,hcs,"hc")
+clus_split('hc_file.csv',y,"hc")
