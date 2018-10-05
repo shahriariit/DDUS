@@ -1,0 +1,11 @@
+algorithmList <- c('lm', 'enet', 'lars', 'rlm')
+set.seed(123)
+models <- caretList(Level~., data=original_data, trControl=control, methodList=algorithmList)
+results <- resamples(models)
+modelCor(results)
+splom(results)
+
+stackControl <- trainControl(method="repeatedcv", number=10, repeats=10, savePredictions=TRUE, classProbs=TRUE)
+set.seed(123)
+stack.glm <- caretStack(models, method="glm", trControl=stackControl)
+print(stack.glm)

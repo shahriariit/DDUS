@@ -1,3 +1,11 @@
 bestresult(reg_lt_or,"reg_lt_or.txt")
 bestresult(reg_lt_mx,"reg_lt_mx.txt")
 bestresult(reg_lt_ex,"reg_lt_ex.txt")
+
+bestresult1(reg_lt_or,"reg_lt_or.txt")
+bestresult1(reg_lt_dd,"reg_lt_dd.txt")
+bestresult1(reg_lt_ex,"reg_lt_ex.txt")
+bestresult1(reg_lt_mx,"reg_lt_mx.txt")
+bestresult1(reg_lt_ded,"reg_lt_ded.txt")
+bestresult1(reg_lt_edd,"reg_lt_edd.txt")
+bestresult1(reg_lt_deddd,"reg_lt_deddd.txt")

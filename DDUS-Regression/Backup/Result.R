@@ -15,4 +15,11 @@ summary(results)
 bestresults <- resamples(list(LM=fit.lm, LMSTEPAIC=fit.lmStepAIC,GLM=fit.glm, GLMSTEPAIC=fit.glmStepAIC,
                               BAYESGLM=fit.bayesglm,ENET=fit.enet, GAM=fit.gam,LARS=fit.lars,PPR=fit.ppr, 
                               RIDGE=fit.ridge, RLM=fit.rlm))
+
+bestresults <- resamples(list(LM=fit.lm, ENET=fit.enet, LARS=fit.lars, RIDGE=fit.ridge, RLM=fit.rlm))
+
+
+
+bestresults <- resamples(list(LM=fit.lm_o, ENET=fit.enet_o, LARS=fit.lars_o, RIDGE=fit.ridge_o, RLM=fit.rlm_o))
+bestresults <- resamples(list(LM=fit.lm_ded, ENET=fit.enet_ded, LARS=fit.lars_ded, RLM=fit.rlm_ded))
 summary(bestresults)
